@@ -10,7 +10,7 @@
 <style>
 body{
 margin:0;
-font-family: 'Segoe UI', sans-serif;
+font-family:'Segoe UI',sans-serif;
 background:#f4f6f9;
 color:#333;
 }
@@ -20,15 +20,16 @@ background:linear-gradient(135deg,#0d6efd,#0a58ca);
 color:white;
 text-align:center;
 padding:60px 20px;
+animation:fadeDown 1s ease;
 }
 
 .profile-img{
-width:140px;
-height:140px;
+width:150px;
+height:150px;
 border-radius:50%;
 border:5px solid white;
-margin-bottom:15px;
 object-fit:cover;
+box-shadow:0 10px 25px rgba(0,0,0,0.2);
 }
 
 .container{
@@ -43,6 +44,7 @@ padding:30px;
 margin-top:20px;
 border-radius:12px;
 box-shadow:0 5px 15px rgba(0,0,0,0.08);
+animation:fadeUp 0.8s ease;
 }
 
 h2{
@@ -57,11 +59,6 @@ color:#0d6efd;
 padding:8px 12px;
 margin:5px;
 border-radius:20px;
-font-size:14px;
-}
-
-.social{
-margin-top:15px;
 }
 
 .social a{
@@ -69,21 +66,35 @@ display:inline-block;
 margin:5px;
 padding:10px 15px;
 border-radius:6px;
-background:#0d6efd;
-color:white;
+background:white;
+color:#0d6efd;
 text-decoration:none;
-font-size:14px;
+font-weight:600;
 }
 
 .social a:hover{
-background:#084298;
+background:#0d6efd;
+color:white;
+}
+
+.timeline{
+border-left:3px solid #0d6efd;
+padding-left:20px;
+}
+
+.timeline-item{
+margin-bottom:20px;
+}
+
+.timeline-item h4{
+margin:0;
 }
 
 .project{
 padding:15px;
 border-left:4px solid #0d6efd;
-margin-bottom:10px;
 background:#f8f9fa;
+margin-bottom:10px;
 border-radius:5px;
 }
 
@@ -93,10 +104,14 @@ padding:30px;
 color:#777;
 }
 
-@media(max-width:600px){
-header{
-padding:40px 15px;
+@keyframes fadeUp{
+from{opacity:0;transform:translateY(20px);}
+to{opacity:1;transform:translateY(0);}
 }
+
+@keyframes fadeDown{
+from{opacity:0;transform:translateY(-20px);}
+to{opacity:1;transform:translateY(0);}
 }
 </style>
 
@@ -105,16 +120,24 @@ padding:40px 15px;
 
 <header>
 
-<img src="https://i.pravatar.cc/300" class="profile-img">
+<img src="foto.jpg" class="profile-img">
 
 <h1>Esteban Salazar</h1>
 <p>Soporte TI | Estudiante Informática</p>
 <p>Concepción, Chile</p>
 
 <div class="social">
-<a href="https://github.com/estebansalazarsantis"><i class="fab fa-github"></i> GitHub</a>
-<a href="#"><i class="fab fa-linkedin"></i> LinkedIn</a>
-<a href="#"><i class="fas fa-envelope"></i> Email</a>
+<a href="https://github.com/estebansalazarsantis">
+<i class="fab fa-github"></i> GitHub
+</a>
+
+<a href="#">
+<i class="fab fa-linkedin"></i> LinkedIn
+</a>
+
+<a href="#">
+<i class="fas fa-envelope"></i> Email
+</a>
 </div>
 
 </header>
@@ -123,12 +146,28 @@ padding:40px 15px;
 
 <div class="card">
 <h2>Sobre mí</h2>
-<p>
 Profesional orientado al soporte TI, redes y soluciones tecnológicas.
-Experiencia en configuración de equipos, servidores Linux,
-redes, desarrollo de aplicaciones Android y automatización.
-Interés en infraestructura, soporte técnico y desarrollo.
-</p>
+Experiencia en configuración de equipos, Linux, redes,
+Android y automatización.
+</div>
+
+<div class="card">
+<h2>Educación</h2>
+
+<div class="timeline">
+
+<div class="timeline-item">
+<h4>Ingeniería en Informática</h4>
+Universidad del Desarrollo  
+En curso
+</div>
+
+<div class="timeline-item">
+<h4>Formación en Soporte TI</h4>
+Redes, sistemas y administración de equipos
+</div>
+
+</div>
 </div>
 
 <div class="card">
@@ -137,12 +176,10 @@ Interés en infraestructura, soporte técnico y desarrollo.
 <span>Soporte TI</span>
 <span>Redes</span>
 <span>Linux</span>
-<span>Android</span>
 <span>Flutter</span>
+<span>Android</span>
 <span>GitHub</span>
-<span>Windows</span>
 <span>Servidores</span>
-<span>Bases de datos</span>
 </div>
 </div>
 
@@ -150,33 +187,23 @@ Interés en infraestructura, soporte técnico y desarrollo.
 <h2>Proyectos</h2>
 
 <div class="project">
-Sistema POS Android con lector de código de barras
+Sistema POS Android con lector código barras
 </div>
 
 <div class="project">
-Configuración servidor Rocky Linux con SSH
+Servidor Rocky Linux con SSH
 </div>
 
 <div class="project">
-Topología de red Packet Tracer VLAN + OSPF
+Topología red VLAN + OSPF
 </div>
 
-<div class="project">
-Sistema control de inventario
-</div>
-
-</div>
-
-<div class="card">
-<h2>Contacto</h2>
-<p><strong>GitHub:</strong> github.com/estebansalazarsantis</p>
-<p><strong>Ubicación:</strong> Concepción, Chile</p>
 </div>
 
 </div>
 
 <footer>
-© 2026 Esteban Salazar - Portafolio Profesional
+© 2026 Esteban Salazar
 </footer>
 
 </body>
